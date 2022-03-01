@@ -19,6 +19,7 @@ const searchPhone = () => {
 const displayPhone = (phones) => {
     // console.log(phones)
     const searchResult = document.getElementById('search-result')
+    searchResult.innerHTML = '';
     const first20Phones = phones.slice(0, 20)
     console.log(first20Phones)
     const error = document.getElementById('error')
@@ -54,4 +55,24 @@ const details = (phoneId) => {
 }
 const showDetails = (phone) => {
     console.log(phone)
+
+    const showDetail = document.getElementById('show-detail')
+    showDetail.innerHTML = '';
+    const div = document.createElement('div')
+    div.classList.add('col')
+    div.innerHTML = `
+        <div class="card shadow p-3 mb-5 bg-body rounded mx-auto w-50">
+  <img src="${phone.image}" class="card-img-top w-50 mx-auto p-2" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${phone.name}</h5>
+    <p class="card-title">${phone.releaseDate}</p>
+    <p class="fw-bold">Feature:</p>
+    <p>Chipset:${phone.mainFeatures.chipSet}</p>
+    <p>${phone.mainFeatures.displaySize}</p>
+    <p>${phone.mainFeatures.memory}</p>
+  </div>
+</div>`
+    showDetail.appendChild(div)
+
+
 }
