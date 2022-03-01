@@ -14,17 +14,23 @@ const searchPhone = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayPhone(data.data))
+
 }
 
 const displayPhone = (phones) => {
     // console.log(phones)
     const searchResult = document.getElementById('search-result')
     searchResult.innerHTML = '';
+    const detail = document.getElementById('show-detail')
+    detail.innerHTML = '';
     const first20Phones = phones.slice(0, 20)
     console.log(first20Phones)
     const error = document.getElementById('error')
     if (first20Phones.length == 0) {
         error.innerText = 'Result not found,Please try again'
+    }
+    else {
+        error.innerText = '';
     }
     first20Phones.forEach(phone => {
         console.log(phone)
@@ -57,7 +63,7 @@ const showDetails = (phone) => {
     console.log(phone)
 
     const showDetail = document.getElementById('show-detail')
-    showDetail.innerHTML = '';
+    // showDetail.innerHTML = '';
     const div = document.createElement('div')
     div.classList.add('col')
     div.innerHTML = `
@@ -66,6 +72,7 @@ const showDetails = (phone) => {
   <div class="card-body">
     <h5 class="card-title fw-bold text-center">${phone.name}</h5>
     <p><span class="fw-bold">Release Date : </span>${phone.releaseDate}</p>
+    
     <p class="fw-bold text-primary">Features :</p>
     <p><span class="fw-bold">Chipset : </span>${phone.mainFeatures.chipSet}</p>
     <p><span class="fw-bold">Display Size : </span>${phone.mainFeatures.displaySize}</p>
