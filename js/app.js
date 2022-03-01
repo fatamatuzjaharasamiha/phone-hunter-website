@@ -64,12 +64,22 @@ const showDetails = (phone) => {
         <div class="card shadow p-3 mb-5 bg-body rounded mx-auto w-50">
   <img src="${phone.image}" class="card-img-top w-50 mx-auto p-2" alt="...">
   <div class="card-body">
-    <h5 class="card-title">${phone.name}</h5>
-    <p class="card-title">${phone.releaseDate}</p>
-    <p class="fw-bold">Feature:</p>
-    <p>Chipset:${phone.mainFeatures.chipSet}</p>
-    <p>${phone.mainFeatures.displaySize}</p>
-    <p>${phone.mainFeatures.memory}</p>
+    <h5 class="card-title fw-bold text-center">${phone.name}</h5>
+    <p><span class="fw-bold">Release Date : </span>${phone.releaseDate}</p>
+    <p class="fw-bold text-primary">Features :</p>
+    <p><span class="fw-bold">Chipset : </span>${phone.mainFeatures.chipSet}</p>
+    <p><span class="fw-bold">Display Size : </span>${phone.mainFeatures.displaySize}</p>
+    <p><span class="fw-bold">Memory : </span>${phone.mainFeatures.memory}</p>
+    <p><span class="fw-bold">Sensors : </span>${phone.mainFeatures.sensors}</p>
+    <p><span class="fw-bold">Storage : </span>${phone.mainFeatures.storage}</p>
+    <p class="fw-bold text-primary">Others :</p>
+    <p><span class="fw-bold">Bluetooth : </span>${phone.others.Bluetooth}</p>
+    <p><span class="fw-bold">GPS : </span>${phone.others.GPS}</p>
+    <p><span class="fw-bold">NFC : </span>${phone.others.NFC}</p>
+    <p><span class="fw-bold">Radio : </span>${phone.others.Radio}</p>
+    <p><span class="fw-bold">USB : </span>${phone.others.USB}</p>
+    <p><span class="fw-bold">WLAN : </span>${phone.others.WLAN}</p>
+    
   </div>
 </div>`
     showDetail.appendChild(div)
