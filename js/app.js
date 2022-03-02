@@ -72,7 +72,7 @@ const showDetails = (phone) => {
   <img src="${phone.image}" class="card-img-top w-50 mx-auto p-2" alt="...">
   <div class="card-body">
     <h5 class="card-title fw-bold text-center">${phone.name}</h5>
-    <p><span class="fw-bold">Release Date : </span>${phone.releaseDate}</p>
+    <p><span class="fw-bold">Release Date : </span>${phone.releaseDate ? phone.releaseDate : 'Not Found'}</p>
     
     <p class="fw-bold text-primary">Features :</p>
     <p><span class="fw-bold">Chipset : </span>${phone.mainFeatures.chipSet}</p>
@@ -81,12 +81,12 @@ const showDetails = (phone) => {
     <p><span class="fw-bold">Sensors : </span>${phone.mainFeatures.sensors}</p>
     <p><span class="fw-bold">Storage : </span>${phone.mainFeatures.storage}</p>
     <p class="fw-bold text-primary">Others :</p>
-    <p><span class="fw-bold">Bluetooth : </span>${phone.others.Bluetooth}</p>
-    <p><span class="fw-bold">GPS : </span>${phone.others.GPS}</p>
-    <p><span class="fw-bold">NFC : </span>${phone.others.NFC}</p>
-    <p><span class="fw-bold">Radio : </span>${phone.others.Radio}</p>
-    <p><span class="fw-bold">USB : </span>${phone.others.USB}</p>
-    <p><span class="fw-bold">WLAN : </span>${phone.others.WLAN}</p>
+    <p><span class="fw-bold">Bluetooth : </span>${phone.others ? phone.others.Bluetooth : 'No Blutooth Information'}</p>
+    <p><span class="fw-bold">GPS : </span>${phone.others ? phone.others.GPS : 'No GPS information'}</p>
+    <p><span class="fw-bold">NFC : </span>${phone.others ? phone.others.NFC : 'Not Found'}</p>
+    <p><span class="fw-bold">Radio : </span>${phone.others ? phone.others.Radio : 'No information'}</p>
+    <p><span class="fw-bold">USB : </span>${phone.others ? phone.others.USB : 'No Information'}</p>
+    <p><span class="fw-bold">WLAN : </span>${phone.others ? phone.others.WLAN : 'No information about WLAN'}</p>
     
   </div>
 </div>`
