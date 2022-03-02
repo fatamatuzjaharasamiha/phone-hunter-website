@@ -5,18 +5,12 @@ const searchPhone = () => {
 
     searchBox.value = '';
 
-    // const error = document.getElementById('error')
-    // if (searchText == '') {
-    //     error.innerText = 'please enter phone Name'
-    // }
-
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayPhone(data.data))
 
 }
-
 const displayPhone = (phones) => {
     // console.log(phones)
     const searchResult = document.getElementById('search-result')
@@ -36,10 +30,10 @@ const displayPhone = (phones) => {
     first20Phones.forEach(phone => {
         console.log(phone)
         const div = document.createElement('div')
-        div.classList.add('col-lg-4', 'mx-auto')
+        div.classList.add('col-lg-4')
         div.innerHTML = `
-        <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-  <img src="${phone.image}" class="card-img-top w-75 mx-auto p-2" alt="...">
+        <div class="card shadow p-3 mb-5 bg-body rounded w-75 mx-auto">
+        <img src="${phone.image}" class="card-img-top w-75 mx-auto p-2" alt="...">
   <div class="card-body">
     <h5 class="card-title">${phone.phone_name}</h5>
     <h5 class="card-title">Brand:${phone.brand}</h5>
@@ -80,6 +74,7 @@ const showDetails = (phone) => {
     <p><span class="fw-bold">Memory : </span>${phone.mainFeatures.memory}</p>
     <p><span class="fw-bold">Sensors : </span>${phone.mainFeatures.sensors}</p>
     <p><span class="fw-bold">Storage : </span>${phone.mainFeatures.storage}</p>
+
     <p class="fw-bold text-primary">Others :</p>
     <p><span class="fw-bold">Bluetooth : </span>${phone.others ? phone.others.Bluetooth : 'No Blutooth Information'}</p>
     <p><span class="fw-bold">GPS : </span>${phone.others ? phone.others.GPS : 'No GPS information'}</p>
