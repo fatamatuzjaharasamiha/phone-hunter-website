@@ -36,7 +36,7 @@ const displayPhone = (phones) => {
     first20Phones.forEach(phone => {
         console.log(phone)
         const div = document.createElement('div')
-        div.className = "col-lg-4"
+        div.classList.add('col-lg-4', 'mx-auto')
         div.innerHTML = `
         <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
   <img src="${phone.image}" class="card-img-top w-75 mx-auto p-2" alt="...">
@@ -66,9 +66,9 @@ const showDetails = (phone) => {
     const showDetail = document.getElementById('show-detail')
     showDetail.innerHTML = '';
     const div = document.createElement('div')
-    div.classList.add('col')
+    div.classList.add('col-lg-6', 'col-sm-12', 'mx-auto')
     div.innerHTML = `
-        <div class="card shadow p-3 mb-5 bg-body rounded mx-auto w-50">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
   <img src="${phone.image}" class="card-img-top w-50 mx-auto p-2" alt="...">
   <div class="card-body">
     <h5 class="card-title fw-bold text-center">${phone.name}</h5>
