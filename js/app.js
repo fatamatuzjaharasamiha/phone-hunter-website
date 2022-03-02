@@ -25,6 +25,7 @@ const displayPhone = (phones) => {
     detail.innerHTML = '';
     const first20Phones = phones.slice(0, 20)
     console.log(first20Phones)
+    // handle error
     const error = document.getElementById('error')
     if (first20Phones.length == 0) {
         error.innerText = 'Result not found,Please try again'
@@ -63,7 +64,7 @@ const showDetails = (phone) => {
     console.log(phone)
 
     const showDetail = document.getElementById('show-detail')
-    // showDetail.innerHTML = '';
+    showDetail.innerHTML = '';
     const div = document.createElement('div')
     div.classList.add('col')
     div.innerHTML = `
